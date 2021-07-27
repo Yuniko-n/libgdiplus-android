@@ -19,6 +19,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/jni \
                     $(LOCAL_PATH)/deps/glib/distsrc \
 					$(LOCAL_PATH)/deps/glib/distsrc/glib \
                     $(LOCAL_PATH)/deps/glib/include \
+                    $(LOCAL_PATH)/deps/libexif \
                     $(LOCAL_PATH)/deps/libgif \
                     $(LOCAL_PATH)/deps/libjpeg \
                     $(LOCAL_PATH)/deps/libpng \
@@ -69,14 +70,16 @@ LOCAL_SRC_FILES := \
 
 LOCAL_STATIC_LIBRARIES += glib 
 LOCAL_STATIC_LIBRARIES += libcairo
+LOCAL_STATIC_LIBRARIES += libexif
 LOCAL_STATIC_LIBRARIES += libgif 
 LOCAL_STATIC_LIBRARIES += libjpeg
 LOCAL_STATIC_LIBRARIES += libpng
 
 include $(BUILD_SHARED_LIBRARY)
 $(call import-add-path,$(LOCAL_PATH))
-$(call import-module,deps/cairo)
 $(call import-module,deps/glib)
+$(call import-module,deps/cairo)
+$(call import-module,deps/libexif)
 $(call import-module,deps/libgif)
 $(call import-module,deps/libjpeg)
 ifeq ($(USE_ZLIB),true)

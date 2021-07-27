@@ -20,6 +20,7 @@ ndk-build
 | fontconfig |  2.13.1  |
 | freetype   |  2.10.1  |
 | glib       |  2.40.2  |
+| libexif    |  0.6.22  |
 | libexpat   |  2.3.0   |
 | libgif     |  5.2.1   |
 | libiconv   |  mini    |

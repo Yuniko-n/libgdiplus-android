@@ -26,16 +26,13 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define if libexif is available. */
-/* #undef HAVE_LIBEXIF */
+#define HAVE_LIBEXIF 1
 
 /* Define to 1 if you have the `fontconfig' library (-lfontconfig). */
 #define HAVE_LIBFONTCONFIG 1
 
 /* Define if gif support is available */
 #define HAVE_LIBGIF 1
-
-/* Define to 1 if you have the `intl' library (-lintl). */
-/* #undef HAVE_LIBINTL */
 
 /* Define if jpeg support is available */
 #define HAVE_LIBJPEG 1

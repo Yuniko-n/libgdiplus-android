@@ -26,6 +26,7 @@ ndk-build
 | libiconv   |  mini    |
 | libjpeg    |  9d      |
 | libpng     |  1.6.37  |
+| libtiff    |  4.3.0   |
 | libuuid    |  1.0.3   |
 | pixman     |  0.38.4  |
 | zlib       |  1.2.11  |

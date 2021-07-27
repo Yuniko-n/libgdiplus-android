@@ -23,6 +23,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/jni \
                     $(LOCAL_PATH)/deps/libgif \
                     $(LOCAL_PATH)/deps/libjpeg \
                     $(LOCAL_PATH)/deps/libpng \
+                    $(LOCAL_PATH)/deps/libtiff \
 
 LOCAL_SRC_FILES := \
                    src/adjustablearrowcap.c \
@@ -74,6 +75,7 @@ LOCAL_STATIC_LIBRARIES += libexif
 LOCAL_STATIC_LIBRARIES += libgif 
 LOCAL_STATIC_LIBRARIES += libjpeg
 LOCAL_STATIC_LIBRARIES += libpng
+LOCAL_STATIC_LIBRARIES += libtiff
 
 include $(BUILD_SHARED_LIBRARY)
 $(call import-add-path,$(LOCAL_PATH))
@@ -82,6 +84,7 @@ $(call import-module,deps/cairo)
 $(call import-module,deps/libexif)
 $(call import-module,deps/libgif)
 $(call import-module,deps/libjpeg)
+$(call import-module,deps/libtiff)
 ifeq ($(USE_ZLIB),true)
     $(call import-module,deps/zlib)
 endif

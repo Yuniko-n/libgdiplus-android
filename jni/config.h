@@ -44,7 +44,7 @@
 #define HAVE_LIBPTHREAD 1
 
 /* Define if tiff support is available */
-/* #undef HAVE_LIBTIFF */
+#define HAVE_LIBTIFF 1
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1

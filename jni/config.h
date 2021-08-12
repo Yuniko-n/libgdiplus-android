@@ -26,13 +26,13 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define if libexif is available. */
-#define HAVE_LIBEXIF 1
+/* #undef HAVE_LIBEXIF */
 
 /* Define to 1 if you have the `fontconfig' library (-lfontconfig). */
 #define HAVE_LIBFONTCONFIG 1
 
 /* Define if gif support is available */
-#define HAVE_LIBGIF 1
+/* #undef HAVE_LIBGIF */
 
 /* Define if jpeg support is available */
 #define HAVE_LIBJPEG 1
@@ -44,7 +44,7 @@
 #define HAVE_LIBPTHREAD 1
 
 /* Define if tiff support is available */
-#define HAVE_LIBTIFF 1
+/* #undef HAVE_LIBTIFF */
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1

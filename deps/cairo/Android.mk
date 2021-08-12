@@ -131,7 +131,7 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := libcairo
+LOCAL_MODULE    := cairo
 LOCAL_CFLAGS    := $(LIBCAIRO_CFLAGS) -w
 LOCAL_SRC_FILES := $(LIBCAIRO_SRC)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/android \

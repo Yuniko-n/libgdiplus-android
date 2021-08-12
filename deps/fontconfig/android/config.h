@@ -301,7 +301,7 @@
 #define STDC_HEADERS 1
 
 /* Use iconv. */
-#define USE_ICONV 0
+/* #undef USE_ICONV */
 
 /* Enable extensions on AIX 3, Interix.  */
 #ifndef _ALL_SOURCE

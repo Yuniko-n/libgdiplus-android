@@ -13,6 +13,12 @@ LOCAL_CFLAGS += -DFONTCONFIG_PATH=\"/sdcard/fontconfig/etc/fonts\"
 LOCAL_CFLAGS += -DFC_ADD_FONTS=\"/sdcard/fontconfig/fonts\"
 # System font directory
 LOCAL_CFLAGS += -DFC_DEFAULT_FONTS=\"/system/fonts\"
+ifeq ($(USE_ICONV),true)
+    LOCAL_CFLAGS += -DUSE_ICONV=1
+    LOCAL_STATIC_LIBRARIES += libiconv
+endif
+
+LOCAL_STATIC_LIBRARIES += freetype libexpat libuuid
 
 include $(LOCAL_PATH)/src/Sources.mk
 
@@ -21,16 +27,13 @@ LOCAL_SRC_FILES  := $(addprefix src/, $(filter %.c, $(libfontconfig_la_SOURCES))
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/android \
     $(LOCAL_PATH)/src \
-	$(LOCAL_PATH)/../freetype/include \
-	$(LOCAL_PATH)/../libexpat \
-	$(LOCAL_PATH)/../libuuid/include \
-	$(LOCAL_PATH)/../libiconv/include
-
-LOCAL_STATIC_LIBRARIES := freetype libexpat libuuid libiconv
+    $(LOCAL_PATH)/../freetype/include \
+    $(LOCAL_PATH)/../libexpat \
+    $(LOCAL_PATH)/../libuuid/include \
+    $(LOCAL_PATH)/../libiconv
 
 include $(BUILD_STATIC_LIBRARY)
 
 $(call import-module,deps/freetype)
 $(call import-module,deps/libexpat)
 $(call import-module,deps/libuuid)
-$(call import-module,deps/libiconv)

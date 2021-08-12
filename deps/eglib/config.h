@@ -23,10 +23,10 @@
 #define HAVE_MKDTEMP 1
 
 /* Define to 1 if you have the <iconv.h> header file. */
-#define HAVE_ICONV_H 1
+/* HAVE_ICONV_H */
 
 /* Define to 1 if you have the `iconv' library (-liconv). */
-#define HAVE_LIBICONV 1
+/* HAVE_LIBICONV */
 
 /* Define to 1 if you have the <pwd.h> header file. */
 #define HAVE_PWD_H 1

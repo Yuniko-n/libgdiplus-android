@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)/..
 
 #################################
-#USE_ZLIB ?= false
+USE_ICONV ?= false
 USE_ZLIB ?= true
 
 ######### [libgdiplus] ##########
@@ -14,11 +14,9 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/jni \
                     $(LOCAL_PATH)/deps/cairo \
                     $(LOCAL_PATH)/deps/cairo/android \
                     $(LOCAL_PATH)/deps/cairo/cairo \
+                    $(LOCAL_PATH)/deps/eglib \
                     $(LOCAL_PATH)/deps/fontconfig \
                     $(LOCAL_PATH)/deps/freetype/include \
-                    $(LOCAL_PATH)/deps/glib/distsrc \
-					$(LOCAL_PATH)/deps/glib/distsrc/glib \
-                    $(LOCAL_PATH)/deps/glib/include \
                     $(LOCAL_PATH)/deps/libexif \
                     $(LOCAL_PATH)/deps/libgif \
                     $(LOCAL_PATH)/deps/libjpeg \
@@ -69,8 +67,8 @@ LOCAL_SRC_FILES := \
                    src/tiffcodec.c \
                    src/wmfcodec.c
 
-LOCAL_STATIC_LIBRARIES += glib 
-LOCAL_STATIC_LIBRARIES += libcairo
+LOCAL_STATIC_LIBRARIES += cairo
+LOCAL_STATIC_LIBRARIES += eglib 
 LOCAL_STATIC_LIBRARIES += libexif
 LOCAL_STATIC_LIBRARIES += libgif 
 LOCAL_STATIC_LIBRARIES += libjpeg
@@ -79,12 +77,15 @@ LOCAL_STATIC_LIBRARIES += libtiff
 
 include $(BUILD_SHARED_LIBRARY)
 $(call import-add-path,$(LOCAL_PATH))
-$(call import-module,deps/glib)
 $(call import-module,deps/cairo)
+$(call import-module,deps/eglib)
 $(call import-module,deps/libexif)
 $(call import-module,deps/libgif)
 $(call import-module,deps/libjpeg)
 $(call import-module,deps/libtiff)
+ifeq ($(USE_ICONV),true)
+    $(call import-module,deps/libiconv)
+endif
 ifeq ($(USE_ZLIB),true)
     $(call import-module,deps/zlib)
 endif

@@ -10,8 +10,8 @@ LOCAL_CFLAGS += \
 
 LOCAL_MODULE     := libiconv
 
-LOCAL_SRC_FILES  := src/iconv.c
+LOCAL_SRC_FILES  := iconv.c
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)
 
 include $(BUILD_STATIC_LIBRARY)

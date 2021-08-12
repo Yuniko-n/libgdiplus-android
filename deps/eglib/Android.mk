@@ -4,6 +4,13 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := eglib
 
+ifeq ($(USE_ICONV),true)
+    LOCAL_CFLAGS += -DHAVE_ICONV_H=1 -DHAVE_LIBICONV=1
+    LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libiconv
+    LOCAL_STATIC_LIBRARIES += libiconv
+endif
+
+LOCAL_C_INCLUDES += $(LOCAL_PATH)
 
 LOCAL_SRC_FILES := \
     garray.c \
@@ -37,12 +44,5 @@ LOCAL_SRC_FILES := \
     gtimer-unix.c \
     gunicode.c \
     gutf8.c
-
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libiconv/include \
-
-#LOCAL_CFLAGS     += -DHAVE_CONFIG_H
-
-LOCAL_EXPORT_LDLIBS := -lz
-LOCAL_STATIC_LIBRARIES += libiconv
 
 include $(BUILD_STATIC_LIBRARY)

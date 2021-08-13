@@ -43,4 +43,9 @@ LOCAL_CFLAGS += -DUSE_SSE2
 LOCAL_SRC_FILES  += pixman-sse2.c
 endif
 
+ifeq ($(TARGET_ARCH_ABI),x86_64)
+LOCAL_CFLAGS += -DUSE_SSE2
+LOCAL_SRC_FILES  += pixman-sse2.c
+endif
+
 include $(BUILD_STATIC_LIBRARY)

@@ -33,9 +33,7 @@ endif
 
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/jni \
                     $(LOCAL_PATH)/src \
-                    $(LOCAL_PATH)/deps/cairo \
-                    $(LOCAL_PATH)/deps/cairo/android \
-                    $(LOCAL_PATH)/deps/cairo/cairo \
+                    $(LOCAL_PATH)/deps/cairo/include \
                     $(LOCAL_PATH)/deps/eglib \
                     $(LOCAL_PATH)/deps/fontconfig \
                     $(LOCAL_PATH)/deps/freetype/include \

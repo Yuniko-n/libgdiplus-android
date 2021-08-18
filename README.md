@@ -16,7 +16,7 @@ ndk-build
 ## 使用到的库
 |    名称    |   版本   |
 | ---------- | -------- |
-| cairo      |  1.16.0  |
+| cairo      |  1.17.4  |
 | eglib      |  eglib   |
 | fontconfig |  2.13.1  |
 | freetype   |  2.10.1  |
